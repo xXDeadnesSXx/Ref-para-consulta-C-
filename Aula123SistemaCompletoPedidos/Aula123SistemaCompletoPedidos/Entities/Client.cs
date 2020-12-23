@@ -7,17 +7,26 @@ namespace Aula123SistemaCompletoPedidos.Entities
     class Client
     {
         public string Name { get; set; }
-        public string email { get; set; }
-        public DateTime Date { get; set; }
+        public string Email { get; set; }
+        public DateTime BirthDate { get; set; }
 
         public Client()
         {
         }
-        public Client(string name, string email, DateTime date)
+        public Client(string name, string email, DateTime birthDate)
         {
             Name = name;
-            this.email = email;
-            Date = date;
+            Email = email;
+            BirthDate = birthDate;
+        }
+        public override string ToString()
+        {
+            return
+                Name +
+                ", (" +
+                BirthDate +
+                ") - " +
+                Email;
         }
     }
 }
