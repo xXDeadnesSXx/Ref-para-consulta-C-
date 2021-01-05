@@ -8,8 +8,13 @@ namespace Aula123SistemaCompletoPedidos.Entities
     class Order
     {
         public DateTime Moment { get; set; }
+<<<<<<< HEAD
         public OrderStatus Status { get; set; }
         public Client Client { get; set; }
+=======
+        public OrderStatus Status{ get; set; }
+        public Client _Client { get; set; }
+>>>>>>> d21e1d489fa0c4139b245ca7fa594165e83c3740
         public List<OrderItem> Items { get; set; } = new List<OrderItem>();
 
         public Order()
@@ -20,6 +25,7 @@ namespace Aula123SistemaCompletoPedidos.Entities
         {
             Moment = moment;
             Status = status;
+<<<<<<< HEAD
             Client = client;
         }
         public void AddItem(OrderItem item)
@@ -53,5 +59,17 @@ namespace Aula123SistemaCompletoPedidos.Entities
             sb.AppendLine("Total price R$ "+Total().ToString("F2"));
             return sb.ToString();
         }
+=======
+            _Client = client;
+        }
+        public void AddProduct(OrderItem item)
+        {
+            Items.Add(item);
+        }
+        public void RemoveProduct(OrderItem item)
+        {
+            Items.Remove(item);
+        }
+>>>>>>> d21e1d489fa0c4139b245ca7fa594165e83c3740
     }
 }

@@ -21,11 +21,20 @@ namespace Aula123SistemaCompletoPedidos.Entities
         }
         public override string ToString()
         {
+<<<<<<< HEAD
             return Name
                 + " ("
                 + BirthDate
                 + ") - "
                 + Email;
+=======
+            return
+                Name +
+                ", (" +
+                BirthDate +
+                ") - " +
+                Email;
+>>>>>>> d21e1d489fa0c4139b245ca7fa594165e83c3740
         }
     }
 }

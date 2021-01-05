@@ -8,6 +8,7 @@ namespace Aula123SistemaCompletoPedidos.Entities
     {
         public string Name { get; set; }
         public double Price { get; set; }
+<<<<<<< HEAD
 
         public Product()
         {
@@ -18,5 +19,7 @@ namespace Aula123SistemaCompletoPedidos.Entities
             Name = name;
             Price = price;
         }
+=======
+>>>>>>> d21e1d489fa0c4139b245ca7fa594165e83c3740
     }
 }

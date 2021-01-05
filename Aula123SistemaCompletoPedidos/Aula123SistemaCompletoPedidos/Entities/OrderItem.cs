@@ -9,7 +9,11 @@ namespace Aula123SistemaCompletoPedidos.Entities
     {
         public int Quantity { get; set; }
         public double Price { get; set; }
+<<<<<<< HEAD
         public Product Product { get; set; }
+=======
+        public Product _product { get; set; }
+>>>>>>> d21e1d489fa0c4139b245ca7fa594165e83c3740
 
         public OrderItem()
         {
@@ -19,13 +23,18 @@ namespace Aula123SistemaCompletoPedidos.Entities
         {
             Quantity = quantity;
             Price = price;
+<<<<<<< HEAD
             Product = product;
+=======
+            _product = product;
+>>>>>>> d21e1d489fa0c4139b245ca7fa594165e83c3740
         }
 
         public double SubTotal()
         {
             return Quantity * Price;
         }
+<<<<<<< HEAD
 
         public override string ToString()
         {
@@ -38,5 +47,7 @@ namespace Aula123SistemaCompletoPedidos.Entities
                 + "Subtotal: R$ "
                 + SubTotal().ToString("F2");
         }
+=======
+>>>>>>> d21e1d489fa0c4139b245ca7fa594165e83c3740
     }
 }
