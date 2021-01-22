@@ -10,7 +10,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.CargoId)
+                @Html.DisplayNameFor(model => model.Cargo)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Nome)
@@ -29,7 +29,7 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.CargoId)
+                    @Html.DisplayFor(modelItem => item.Cargo.Tipo)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Nome)
@@ -42,7 +42,8 @@
                 </td>
                 <td>
                     <a asp-action="Edit">Editar</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a> | 
+                    <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
                 </td>
             </tr>
         }

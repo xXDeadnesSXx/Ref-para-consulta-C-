@@ -58,5 +58,19 @@ namespace DCP_OMNI.Controllers
             _funcionarioService.Remove(id);
             return RedirectToAction(nameof(Index));
         }
+        //GET
+        public IActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var obj = _funcionarioService.FindById(id.Value);
+            if(obj == null)
+            {
+                return NotFound();
+            }
+            return View(obj);
+        }
     }
 }

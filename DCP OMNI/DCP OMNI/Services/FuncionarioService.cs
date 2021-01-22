@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace DCP_OMNI.Services
 {
@@ -19,8 +20,8 @@ namespace DCP_OMNI.Services
             return _context.Funcionario.OrderBy(x=>x.CargoId).ToList();
         }
         public Funcionario FindById(int id)
-        {
-            return _context.Funcionario.FirstOrDefault(obj=>obj.Id==id);
+        {//include faz um join para exibir o cargo, caso contrário só seria exibido o Id
+            return _context.Funcionario.Include(obj=>obj.Cargo).FirstOrDefault(obj=>obj.Id==id);
         }
         public void Insert(Funcionario obj)
         {
