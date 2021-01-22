@@ -36,5 +36,27 @@ namespace DCP_OMNI.Controllers
             _funcionarioService.Insert(funcionario);
             return RedirectToAction(nameof(Index));
         }
+        //GET
+        public IActionResult Delete(int? id)//Recebe um id opcional
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var obj = _funcionarioService.FindById(id.Value);//id.Value pq id é opcional
+            if (obj == null)
+            {
+                return NotFound();
+            }
+            return View(obj);//caso exista ele chama a view passando o obj
+        }
+        //POST
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Delete(int id)
+        {
+            _funcionarioService.Remove(id);
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

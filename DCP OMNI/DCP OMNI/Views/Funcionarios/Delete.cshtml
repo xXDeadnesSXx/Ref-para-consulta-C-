@@ -1,0 +1,44 @@
+﻿@model DCP_OMNI.Models.Funcionario
+@{
+    ViewData["Title"] = "Excluir funcionário";
+}
+
+<h2>@ViewData["Title"]</h2>
+<hr />
+<h3>Você deseja realmente excluir o funcionário?</h3>
+<div>
+    <div class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cargo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cargo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Rg)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Rg)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cpf)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cpf)
+        </dd>
+        <hr />
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Excluir" class="btn btn-danger" />
+            <a asp-action="Index" class="btn btn-default">Cancelar</a>
+        </form>
+    </div>
+
+</div>
+

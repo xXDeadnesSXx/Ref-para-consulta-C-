@@ -18,9 +18,19 @@ namespace DCP_OMNI.Services
         {//lista todos os funcionarios
             return _context.Funcionario.OrderBy(x=>x.CargoId).ToList();
         }
+        public Funcionario FindById(int id)
+        {
+            return _context.Funcionario.FirstOrDefault(obj=>obj.Id==id);
+        }
         public void Insert(Funcionario obj)
         {
             _context.Add(obj);
+            _context.SaveChanges();
+        }
+        public void Remove(int id)
+        {
+            var obj = _context.Funcionario.Find(id);
+            _context.Funcionario.Remove(obj);
             _context.SaveChanges();
         }
     }

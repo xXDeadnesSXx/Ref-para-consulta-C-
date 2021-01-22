@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<DCP_OMNI.Models.Funcionario>
-@{ 
+
+@{
     ViewData["Title"] = "Funcionários";
 }
 <h2>@ViewData["Title"]</h2>
@@ -9,16 +10,16 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model=>model.Cargo)
+                @Html.DisplayNameFor(model => model.CargoId)
             </th>
             <th>
-                @Html.DisplayNameFor(model=>model.Nome)
+                @Html.DisplayNameFor(model => model.Nome)
             </th>
             <th>
-                @Html.DisplayNameFor(model=>model.Rg)
+                @Html.DisplayNameFor(model => model.Rg)
             </th>
             <th>
-                @Html.DisplayNameFor(model=>model.Cpf)
+                @Html.DisplayNameFor(model => model.Cpf)
             </th>
             <th></th>
         </tr>
@@ -26,24 +27,24 @@
     <tbody>
         @foreach (var item in Model)
         {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cargo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rg)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cpf)
-            </td>
-            <td>
-                <a asp-action="Edit">Editar</a> |
-                <a asp-action="Delete">Excluir</a>
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CargoId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rg)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cpf)
+                </td>
+                <td>
+                    <a asp-action="Edit">Editar</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+                </td>
+            </tr>
         }
     </tbody>
 </table>
