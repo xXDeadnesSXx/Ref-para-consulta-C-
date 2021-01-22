@@ -1,0 +1,33 @@
+﻿@model DCP_OMNI.Models.FuncionarioFormViewModel
+@{
+    ViewData["Title"] = "Adicionar um novo funcionário";
+}
+<h2>@ViewData["Title"]</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div class="form-group">
+                <label asp-for="Funcionario.Nome" class="control-label"></label>
+                <input asp-for="Funcionario.Nome" class="form-control" autofocus />
+            </div>
+            <div class="form-group">
+                <label asp-for="Funcionario.Rg" class="control-label"></label>
+                <input asp-for="Funcionario.Rg" class="form-control" autofocus />
+            </div>
+            <div class="form-group">
+                <label asp-for="Funcionario.Cpf" class="control-label"></label>
+                <input asp-for="Funcionario.Cpf" class="form-control" autofocus />
+            </div>
+            <div class="form-group">
+                <label asp-for="Funcionario.CargoId" class="control-label"></label>
+                <select asp-for="Funcionario.CargoId" 
+                asp-items="@(new SelectList(Model.Cargos,"Id","Tipo"))" class="form-control"></select>
+                        <!--No SelectList(fonte dos dados, atributo a ser gravado, atributo exibido-->
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>

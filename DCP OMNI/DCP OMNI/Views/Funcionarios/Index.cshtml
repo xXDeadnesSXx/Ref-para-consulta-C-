@@ -1,0 +1,49 @@
+﻿@model IEnumerable<DCP_OMNI.Models.Funcionario>
+@{ 
+    ViewData["Title"] = "Funcionários";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>Lista de funcionário da DCP</h3>
+<a asp-action="Create" class="btn btn-success"><b>Novo Funcionario</b></a>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model=>model.Cargo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model=>model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model=>model.Rg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model=>model.Cpf)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cargo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cpf)
+            </td>
+            <td>
+                <a asp-action="Edit">Editar</a> |
+                <a asp-action="Delete">Excluir</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
