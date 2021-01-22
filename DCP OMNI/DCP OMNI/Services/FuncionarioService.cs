@@ -17,7 +17,7 @@ namespace DCP_OMNI.Services
         }
         public List<Funcionario> FindAll()
         {//lista todos os funcionarios
-            return _context.Funcionario.OrderBy(x=>x.CargoId).ToList();
+            return _context.Funcionario.Include(obj => obj.Cargo).OrderBy(x=>x.CargoId).ToList();
         }
         public Funcionario FindById(int id)
         {//include faz um join para exibir o cargo, caso contrário só seria exibido o Id
