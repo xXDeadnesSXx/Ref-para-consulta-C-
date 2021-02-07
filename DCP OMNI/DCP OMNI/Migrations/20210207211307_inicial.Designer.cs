@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DCP_OMNI.Migrations
 {
     [DbContext(typeof(DCP_OMNIContext))]
-    [Migration("20210122161857_initial")]
-    partial class initial
+    [Migration("20210207211307_inicial")]
+    partial class inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -48,6 +48,22 @@ namespace DCP_OMNI.Migrations
                     b.HasIndex("CargoId");
 
                     b.ToTable("Funcionario");
+                });
+
+            modelBuilder.Entity("DCP_OMNI.Models.Material", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("Estoque");
+
+                    b.Property<string>("Marca");
+
+                    b.Property<string>("Nome");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Material");
                 });
 
             modelBuilder.Entity("DCP_OMNI.Models.Funcionario", b =>

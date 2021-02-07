@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DCP_OMNI.Migrations
 {
-    public partial class initial : Migration
+    public partial class inicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -18,6 +18,21 @@ namespace DCP_OMNI.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Cargo", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Material",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Nome = table.Column<string>(nullable: true),
+                    Marca = table.Column<string>(nullable: true),
+                    Estoque = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Material", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -52,6 +67,9 @@ namespace DCP_OMNI.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Funcionario");
+
+            migrationBuilder.DropTable(
+                name: "Material");
 
             migrationBuilder.DropTable(
                 name: "Cargo");

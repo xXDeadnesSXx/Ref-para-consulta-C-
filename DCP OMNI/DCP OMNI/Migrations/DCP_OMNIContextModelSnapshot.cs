@@ -48,6 +48,22 @@ namespace DCP_OMNI.Migrations
                     b.ToTable("Funcionario");
                 });
 
+            modelBuilder.Entity("DCP_OMNI.Models.Material", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("Estoque");
+
+                    b.Property<string>("Marca");
+
+                    b.Property<string>("Nome");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Material");
+                });
+
             modelBuilder.Entity("DCP_OMNI.Models.Funcionario", b =>
                 {
                     b.HasOne("DCP_OMNI.Models.Cargo", "Cargo")

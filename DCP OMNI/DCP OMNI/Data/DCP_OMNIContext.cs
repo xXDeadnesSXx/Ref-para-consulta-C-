@@ -16,5 +16,6 @@ namespace DCP_OMNI.Data
 
         public DbSet<Funcionario> Funcionario { get; set; }
         public DbSet<Cargo> Cargo { get; set; }
+        public DbSet<DCP_OMNI.Models.Material> Material { get; set; }
     }
 }
