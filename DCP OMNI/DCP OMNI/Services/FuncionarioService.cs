@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using DCP_OMNI.Services.Exceptions;
 
 namespace DCP_OMNI.Services
 {
@@ -33,6 +34,22 @@ namespace DCP_OMNI.Services
             var obj = _context.Funcionario.Find(id);
             _context.Funcionario.Remove(obj);
             _context.SaveChanges();
+        }
+        public void Update(Funcionario obj)
+        {
+            if (!_context.Funcionario.Any(x => x.Id == obj.Id))
+            {
+                throw new NotFoundException("Id inexistente");
+            }
+            try
+            {
+                _context.Update(obj);
+                _context.SaveChanges();
+            }
+            catch (DbConcurrencyException e)
+            {
+                throw new DbConcurrencyException(e.Message);
+            }
         }
     }
 }

@@ -72,5 +72,19 @@ namespace DCP_OMNI.Controllers
             }
             return View(obj);
         }
+        //GET
+        public IActionResult Edit(int? id)
+        {
+            if (id == null) { return NotFound(); }
+            var obj = _funcionarioService.FindById(id.Value);
+            if (obj == null) { return NotFound(); }
+            List<Cargo> cargos = _cargoService.FindAll();
+            FuncionarioFormViewModel viewModel = new FuncionarioFormViewModel
+            {
+                Funcionario = obj,
+                Cargos = cargos
+            };
+            return View(viewModel);
+        }
     }
 }
