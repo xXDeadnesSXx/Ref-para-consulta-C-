@@ -33,5 +33,27 @@ namespace DCP_OMNI.Controllers
             _cargoService.Insert(cargo);
             return RedirectToAction(nameof(Index));
         }
+        //GET
+        public IActionResult Delete(int? id)
+        {
+            if (id==null)
+            {
+                return NotFound();
+            }
+            var obj = _cargoService.FindById(id.Value);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+            return View(obj);
+        }
+        //POST
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Delete(int id)
+        {
+            _cargoService.Remove(id);
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

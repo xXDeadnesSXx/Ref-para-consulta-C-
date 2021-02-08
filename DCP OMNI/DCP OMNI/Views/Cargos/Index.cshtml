@@ -29,7 +29,7 @@
                 </td>
                 <td>
                     <a asp-action="Edit">Editar</a> |
-                    <a asp-action="Delete">Excluir</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
                 </td>
             </tr>
         }

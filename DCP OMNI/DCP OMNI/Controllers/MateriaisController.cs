@@ -149,5 +149,9 @@ namespace DCP_OMNI.Controllers
         {
             return _context.Material.Any(e => e.Id == id);
         }
+        public IActionResult AddEstoque()
+        {
+            return View();
+        }
     }
 }

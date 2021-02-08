@@ -1,0 +1,27 @@
+﻿@model DCP_OMNI.Models.Cargo
+
+@{
+    ViewData["Title"] = "Excluir";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<hr />
+<h3>Você deseja realmente excluir o cargo?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tipo)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Excluir" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-default">Cancelar</a>
+    </form>
+</div>

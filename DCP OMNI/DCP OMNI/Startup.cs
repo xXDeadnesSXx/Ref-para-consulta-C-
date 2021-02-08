@@ -42,6 +42,7 @@ namespace DCP_OMNI
 builder.MigrationsAssembly("DCP OMNI")));
             services.AddScoped<FuncionarioService>();
             services.AddScoped<CargoService>();
+            services.AddScoped<MaterialService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
